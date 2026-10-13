@@ -133,7 +133,7 @@ looker.plugins.visualizations.add({
       ]);
 
       const taxaField = findField([
-        "taxa", "taxa_conversao", "percentual"
+        "taxa_etapa", "taxa", "taxa_conversao", "percentual"
       ]);
 
       const totalTaxaField = findField([
