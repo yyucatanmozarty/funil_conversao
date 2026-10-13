@@ -3,9 +3,7 @@ looker.plugins.visualizations.add({
   label: "Funil de Conversão",
 
   create: function(element) {
-    element.innerHTML =
-      '<div id="funil-teste" style="padding:20px;font:16px Arial;">' +
-      'Visualização carregada.</div>';
+    element.innerHTML = "";
   },
 
   updateAsync: function(
@@ -17,16 +15,16 @@ looker.plugins.visualizations.add({
     done
   ) {
     try {
-      var container = element.querySelector("#funil-teste");
-
-      if (container) {
-        container.innerHTML =
-          "Visualização OK — linhas recebidas: " + data.length;
-      }
+      element.innerHTML =
+        '<div style="padding:20px;font:16px Arial;color:#102944">' +
+        '<h3>Teste da Custom Visualization</h3>' +
+        '<p>Linhas recebidas: ' + data.length + '</p>' +
+        '<p>updateAsync executado com sucesso.</p>' +
+        '</div>';
     } catch (error) {
       element.textContent = "Erro: " + error.message;
+    } finally {
+      done();
     }
-
-    done();
   }
 });
